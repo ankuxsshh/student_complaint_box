@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Complaint Box</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index_page">Student Complaint Box</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="student_index_page">Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_index_page">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faculty_index_page">Faculty</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Welcome to Student Complaint Box</h1>
+                <p>
+                    This is a platform where students can lodge their complaints and grievances. We are here to
+                    listen to you and address your concerns promptly.
+                </p>
+                <a href="#" class="btn btn-primary">Lodge a Complaint</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+       <!-- Features Section -->
+       <section class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <i class="fas fa-book"></i>
+                    <h3>Explore Courses</h3>
+                    <p>Choose from a wide range of courses to enhance your knowledge and skills.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Manage Schedule</h3>
+                    <p>Effortlessly manage your class schedules and assignments.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Track Progress</h3>
+                    <p>Monitor your academic progress and achievements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2023 Student Portal</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>

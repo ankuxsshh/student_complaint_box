@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Acknowledgement Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            padding-top: 60px;
+        }
+
+        .registration-box {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'admin_acknowledgement_page' %}">Admin Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_home_page' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_viewstudent_page' %}">View Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_addfaculty_page' %}">Add Faculty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_viewfaculty_page' %}">View Faculty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'admin_acknowledgement_page' %}">Acknowledgement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_viewprofile_page' %}">View Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Acknowledgement Form Section -->
+    <div class="container mt-5">
+        <div class="registration-box">
+            <h2 class="text-center">Acknowledgement Form</h2>
+            <form method="post" action="{% url 'save_acknowledgement' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="date">Date:</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="facultyType" class="form-label">Designation</label>
+                    <select class="form-select" id="facultyType" name="facultyType" required>
+                        <option value="">Select Faculty Type</option>
+                        <option value="Trainer">Trainer</option>
+                        <option value="HR">HR</option>
+                        <option value="Operation Head">Operation Head</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="acknowledgement_message">Acknowledgement Message:</label>
+                    <textarea class="form-control" id="acknowledgement_message" name="acknowledgement_message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Acknowledgement</button>
+            </form>
+        </div>
+    </div>
+<br>
+<br>
+<br>
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3 ">
+        <div class="container">
+            <p>&copy; 2023 Student Portal</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

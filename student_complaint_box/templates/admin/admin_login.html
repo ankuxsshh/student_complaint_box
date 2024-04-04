@@ -1,0 +1,128 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Complaint Box</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+</body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="admin_login_page">Student Complaint Box</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_index_page' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'admin_login_page' %}">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Login Form</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .login-box {
+                max-width: 400px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                background-color: #f9f9f9;
+            }
+    
+            .login-box h2 {
+                text-align:left;
+                margin-bottom: 20px;
+            }
+    
+            .form-group {
+                margin-bottom: 20px;
+            }
+    
+            .form-group input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+    
+            .btn-login {
+                width: 40%;
+                padding: 10px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+    
+            .btn-login:hover {
+                background-color: #0056b3;
+            }
+        </style>
+        <form action="{% url 'authenticate_user' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="login-box">
+                <h2>Admin Login</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <span class="fas fa-envelope"></span>
+                    </div>
+                    <div class="form-group">
+                        <span class="fas fa-lock"></span>
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>             
+                    </div>
+                    <div>
+                    </div>
+                    <button type="submit" class="btn btn-login">Login</button>
+                </form>
+                <br>
+                </br>
+            </div>
+        </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- Footer Section -->
+<footer class="bg-dark text-white text-center py-3">
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2023 Student Portal</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+</html>

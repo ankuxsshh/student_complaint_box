@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Portal</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<style>
+    .registration-box {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+</style>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="faculty_viewprofile_page">Faculty Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'faculty_home_page' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'faculty_viewcomplaint_page' %}">View Complaint</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'faculty_acknowledgement_page' %}">Acknowledgement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'faculty_adminacknowledgement_page' %}">Admin Acknowledgement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'faculty_viewprofile_page' %}">View Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Logout</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+     <!-- View Profile Form -->
+     <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="registration-box">
+                    <h2 class="mb-4">View Profile</h2>
+                    <br>
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-block">
+                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">INFORMATION:</h6>
+                                    <br>
+                                    <div class="form-group">
+                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Name : </h6>
+                                        <p class="form-control-static">{{ name }}</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Email : </h6>
+                                        <p class="form-control-static">{{ email }}</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Designation : </h6>
+                                        <p class="form-control-static">{{ designation }}</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Password : </h6>
+                                        <p class="form-control-static">{{ password }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<!-- Footer Section -->
+<footer class="bg-dark text-white text-center py-3">
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2023 Faculty Portal</p>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+</html>
